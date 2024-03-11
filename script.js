@@ -37,10 +37,11 @@ function operate(firstNumber, operand, secondNumber){
 
 //Declared variables for the the buttons
 let numberValues = document.querySelectorAll(".numbers");
-let operators = document.querySelectorAll("operator");
+let operators = document.querySelectorAll(".operator");
 let equals = document.getElementById("equals");
 let clearButton = document.getElementById("clear");
 let deleteButton = document.getElementById("delete")
+let demo = document.getElementById("demo")
 
 let display = [];
 
@@ -48,12 +49,14 @@ let display = [];
 numberValues.forEach(number => {
     number.addEventListener("click", function(){
         display.push(number.innerText)
+        demo.innerText = display.join("")
         console.log(display)       
     })
 })
 operators.forEach(operator =>{
     operator.addEventListener("click", function(){
         display.push(operator.innerText);
+        demo.innerText = display.join("")
         console.log(display);
     })
 })
