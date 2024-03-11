@@ -42,3 +42,12 @@ let equals = document.getElementById("equals");
 let clearButton = document.getElementById("clear");
 let deleteButton = document.getElementById("delete")
 
+let display = [];
+
+//Function to append numbers and operators to the array
+function numberDisplay(){
+    numberValues.forEach(number => display.push(number));
+}
+function operatorDisplay(){
+    operators.forEach(operator => display.push(operator));
+}
