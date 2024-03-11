@@ -15,6 +15,7 @@ let firstNumber;
 let secondNumber;
 let operand;
 
+//Function to perform the four operations on two numbers
 function operate(firstNumber, operand, secondNumber){
     switch (operand) {
         case "+":
