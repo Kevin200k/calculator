@@ -35,3 +35,10 @@ function operate(firstNumber, operand, secondNumber){
     }
 }
 
+//Declared variables for the the buttons
+let numberValues = document.querySelectorAll(".numbers");
+let operators = document.querySelectorAll("operator");
+let equals = document.getElementById("equals");
+let clearButton = document.getElementById("clear");
+let deleteButton = document.getElementById("delete")
+
