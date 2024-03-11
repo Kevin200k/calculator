@@ -44,10 +44,16 @@ let deleteButton = document.getElementById("delete")
 
 let display = [];
 
-//Function to append numbers and operators to the array
-function numberDisplay(){
-    numberValues.forEach(number => display.push(number));
-}
-function operatorDisplay(){
-    operators.forEach(operator => display.push(operator));
-}
+//Append different numbers and operators to the display array
+numberValues.forEach(number => {
+    number.addEventListener("click", function(){
+        display.push(number.innerText)
+        console.log(display)       
+    })
+})
+operators.forEach(operator =>{
+    operator.addEventListener("click", function(){
+        display.push(operator.innerText);
+        console.log(display);
+    })
+})
