@@ -34,9 +34,17 @@ numberValues.forEach(number => {
 })
 operators.forEach(operator =>{
     operator.addEventListener("click", function(){
-        operand = operator.innerText;
-        display.push(operator.innerText);
-        demo.innerText = display.join("")
+        if(display.indexOf(operand) === -1){
+            operand = operator.innerText;
+            display.push(operator.innerText);
+            demo.innerText = display.join("")
+        }
+        else{
+            operate();
+            operand = operator.innerText;
+            display.push(operator.innerText);
+            demo.innerText = display.join("")
+        }
     })
 })
 
@@ -58,15 +66,24 @@ function operate(firstNumber, secondNumber){
    
     switch (operand) {
         case "+":
+            display = [add(firstNumber, secondNumber)]
             demo.innerText = add(firstNumber, secondNumber)
             break;
         case "-":
+            display = [subtract(firstNumber, secondNumber)]
             demo.innerText = subtract(firstNumber, secondNumber)
             break;
         case "/":
-            demo.innerText = divide(firstNumber, secondNumber)
+            display = [divide(firstNumber, secondNumber)]
+            if(secondNumber === 0){
+                demo.innerText = "MATH ERROR";
+            }
+            else{
+                demo.innerText = divide(firstNumber, secondNumber)
+            }
             break;
         case "*":
+            display = [multiply(firstNumber, secondNumber)]
             demo.innerText = multiply(firstNumber, secondNumber)
             break;
         default:
