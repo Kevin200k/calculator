@@ -90,4 +90,3 @@ function operate(firstNumber, secondNumber){
             break;
     }
 }
-
