@@ -1,10 +1,6 @@
-// Calculator variables
-let firstNumber;
-let secondNumber;
-let operator;
 
 // Function for mathematical operations
-const calculator = (function(){
+const numericalOperations = (function(){
     add = (a, b) => a + b;
     subtract = (a, b) => a - b;
     multiply = (a, b) => a * b;
@@ -12,3 +8,4 @@ const calculator = (function(){
     return { add, subtract, multiply, divide }
  }())
  
+ // Operate function
