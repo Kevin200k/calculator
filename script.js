@@ -11,7 +11,8 @@ const Calculator = {
     firstNumber: [],
     secondNumber: [],
     currentOperator: "",
-    display: []
+    display: [],
+    defaultScreenValue: 0
 }
 
 // Function for mathematical operations
@@ -91,3 +92,8 @@ deleteButton.addEventListener("click", deleteValues)
 
 //Event listener for the clear button 
 clearButton.addEventListener("click", clearValues)
+
+//Event listener for window
+window.addEventListener("load", () => {
+    demo.textContent = Calculator.defaultScreenValue;
+})
