@@ -2,7 +2,7 @@
 let numbers = document.querySelectorAll(".numbers");
 let operators = document.querySelectorAll(".operator");
 let equalButton = document.querySelector("#equals");
-let deletebutton = document.querySelector("#delete")
+let deletebutton = document.querySelector("#delete");
 
 // Calculator variables
 const Calculator = {
@@ -77,3 +77,6 @@ let deleteValues = () => {
 
  // Event listener for the equal sign
 equalButton.addEventListener("click", operate)
+
+//Event listener for the delete button
+deletebutton.addEventListener("click", deleteValues)
