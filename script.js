@@ -1,3 +1,7 @@
+// Calculator variables
+let firstNumber;
+let secondNumber;
+let operator;
 
 // Function for mathematical operations
 const calculator = (function(){
