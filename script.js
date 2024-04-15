@@ -1,3 +1,9 @@
+// Calculator variables
+const Calculator = {
+    firstNumber: [],
+    secondNumber: [],
+    display: []
+}
 
 // Function for mathematical operations
 const numericalOperations = (function(){
