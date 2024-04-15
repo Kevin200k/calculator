@@ -1,7 +1,8 @@
 //DOM Elements
 let numbers = document.querySelectorAll(".numbers");
 let operators = document.querySelectorAll(".operator");
-let equalButton = document.querySelector("#equals")
+let equalButton = document.querySelector("#equals");
+let deletebutton = document.querySelector("#delete")
 
 // Calculator variables
 const Calculator = {
@@ -20,6 +21,11 @@ const solve = (function(){
     return { add, subtract, multiply, divide }
  }())
 
+ // Delete function
+let deleteValues = () => {
+    Calculator.display.pop();
+    demo.textContent = Calculator.display.join("");
+}
  // Operate function
  let operate = () => {
     let index = Calculator.display.indexOf(Calculator.currentOperator);
@@ -50,7 +56,8 @@ const solve = (function(){
     Calculator.display.push(demo.textContent)
     Calculator.currentOperator = "";
  }
- 
+
+
  //Event listeners to handle all number values
  numbers.forEach(number => {
     number.addEventListener("click", () => {
