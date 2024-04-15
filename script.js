@@ -28,6 +28,12 @@ let deleteValues = () => {
     Calculator.display.pop();
     demo.textContent = Calculator.display.join("");
 }
+// Clear function
+let clearValues = () => {
+    Calculator.display = [];
+    Calculator.currentOperator = "";
+    demo.textContent = "";
+}
  // Operate function
  let operate = () => {
     let index = Calculator.display.indexOf(Calculator.currentOperator);
@@ -82,3 +88,6 @@ equalButton.addEventListener("click", operate)
 
 //Event listener for the delete button
 deleteButton.addEventListener("click", deleteValues)
+
+//Event listener for the clear button 
+clearButton.addEventListener("click", clearValues)
