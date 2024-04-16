@@ -11,35 +11,34 @@ const Calculator = {
     firstNumber: [],
     secondNumber: [],
     currentOperator: "",
-    display: [],
-    defaultScreenValue: 0
+    storage: [],
+    defaultScreenValue: 0   
 }
 
-// Function for mathematical operations
-const solve = (function(){
-    add = (a, b) => a + b;
-    subtract = (a, b) => a - b;
-    multiply = (a, b) => a * b;
-    divide = (a, b) => a / b;
-    return { add, subtract, multiply, divide }
- }())
-
+// Objects to store mathematical operations
+const solve = {
+    add: (a, b) => a + b,
+    subtract: (a, b) => a - b,
+    multiply: (a, b) => a * b,
+    divide: (a, b) => a / b
+};
  // Delete function
 let deleteValues = () => {
-    Calculator.display.pop();
-    demo.textContent = Calculator.display.join("");
+    Calculator.storage.pop();
+    if(Calculator.storage.length === 0) demo.textContent = Calculator.defaultScreenValue;
+    else demo.textContent = Calculator.storage.join("");
 }
 // Clear function
 let clearValues = () => {
-    Calculator.display = [];
+    Calculator.storage = [];
     Calculator.currentOperator = "";
-    demo.textContent = "";
+    demo.textContent = Calculator.currentOperator;
 }
  // Operate function
  let operate = () => {
-    let index = Calculator.display.indexOf(Calculator.currentOperator);
-    Calculator.firstNumber = Calculator.display.slice(0, index)
-    Calculator.secondNumber = Calculator.display.slice(index + 1, Calculator.display.length)
+    let index = Calculator.storage.indexOf(Calculator.currentOperator);
+    Calculator.firstNumber = Calculator.storage.slice(0, index)
+    Calculator.secondNumber = Calculator.storage.slice(index + 1, Calculator.storage.length)
     
     //Calculator variables
     let x1 = parseFloat(Calculator.firstNumber.join(""));
@@ -60,9 +59,9 @@ let clearValues = () => {
             demo.textContent = solve.divide(x1, x2);
             break;
     }
-    // Resets the display array and current operator
-    Calculator.display = [];
-    Calculator.display.push(demo.textContent)
+    // Resets the storage array and current operator
+    Calculator.storage = [];
+    Calculator.storage.push = demo.textContent;
     Calculator.currentOperator = "";
  }
 
@@ -70,8 +69,8 @@ let clearValues = () => {
  //Event listeners to handle all number values
  numbers.forEach(number => {
     number.addEventListener("click", () => {
-        Calculator.display.push(number.textContent)
-        demo.textContent = Calculator.display.join("")
+        Calculator.storage.push(number.textContent)
+        demo.textContent = Calculator.storage.join("")
     })
  })
 
@@ -79,8 +78,8 @@ let clearValues = () => {
  operators.forEach(operator => {
     operator.addEventListener("click", () => {
         Calculator.currentOperator = operator.textContent
-        Calculator.display.push(Calculator.currentOperator)
-        demo.textContent = Calculator.display.join("")
+        Calculator.storage.push(Calculator.currentOperator)
+        // demo.textContent = Calculator.storage.join("")
     })
  })
 
