@@ -61,7 +61,7 @@ let clearValues = () => {
     }
     // Resets the storage array and current operator
     Calculator.storage = [];
-    Calculator.storage.push = demo.textContent;
+    Calculator.storage.push(demo.textContent);
     Calculator.currentOperator = "";
  }
 
