@@ -87,15 +87,8 @@ let dotValues = () => {
             break;
     }
     console.log(result)
-    console.log(Calculator.storage)
-    if(result === 0){
-        demo.textContent = result;
-        Calculator.storage = [];
-        Calculator.secondNumber = [];
-        Calculator.storage.push(demo.textContent);
-        Calculator.currentOperator = "";
-    }
-    else if(!result || result === Infinity || result === NaN){
+    console.log(Calculator.storage)     
+    if(result === Infinity || isNaN(result)){
         demo.textContent = "ERROR";
         buttons.forEach(button => button.disabled = true)
         setTimeout(() =>{
