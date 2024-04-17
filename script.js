@@ -88,7 +88,14 @@ let dotValues = () => {
     }
     console.log(result)
     console.log(Calculator.storage)
-    if(result != 0 || !result || result === Infinity){
+    if(result === 0){
+        demo.textContent = result;
+        Calculator.storage = [];
+        Calculator.secondNumber = [];
+        Calculator.storage.push(demo.textContent);
+        Calculator.currentOperator = "";
+    }
+    else if(!result || result === Infinity){
         demo.textContent = "ERROR";
         buttons.forEach(button => button.disabled = true)
         setTimeout(() =>{
