@@ -4,27 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id = demo></div>
-    <button class="numbers">0</button>
-    <button class="numbers">1</button>
-    <button class="numbers">2</button>
-    <button class="numbers">3</button><br>
-    <button class="numbers">4</button>
-    <button class="numbers">5</button>
-    <button class="numbers">6</button>
-    <button class="numbers">7</button><br>
-    <button class="numbers">8</button>
-    <button class="numbers">9</button>
-    <button class="operator">+</button>
-    <button class="operator">-</button><br>
-    <button class="operator">*</button>
-    <button class="operator">/</button>
-    <button id="equals">=</button>
-    <button id="clear">AC</button><br>
-    <button id = "delete">DEL</button>
-    <button id = "decimalpoint">.</button>
+    <div id = "container">
+        <div id = demo></div>
+        <div id="calculatorbuttons">
+            <button id="clear">CE</button>
+            <button id = "delete">C</button>
+            <button id = "modulus" class="operator">%</button>
+            <button class="operator" id = "divide">÷</button>
+            <button class="numbers" id = "seven">7</button>
+            <button class="numbers" id = "eight">8</button>
+            <button class="numbers" id = "nine">9</button>
+            <button class="operator" id = "multiply">×</button>
+            <button class="numbers" id = "four">4</button>
+            <button class="numbers" id = "five">5</button>
+            <button class="numbers" id = "six">6</button>
+            <button class="operator" id = "minus">—</button>
+            <button class="numbers" id = "one">1</button>
+            <button class="numbers" id = "two">2</button>
+            <button class="numbers" id = "three">3</button>
+            <button class="operator" id = "add">+</button>
+            <button class="numbers" id = "zero">0</button>
+            <button id = "decimalpoint">.</button>
+            <button id="equals">=</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

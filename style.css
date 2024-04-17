@@ -1,0 +1,145 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+:root{
+    --button-height: 30px;
+    --container-height: 100vh;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background: black;
+
+}
+#container{
+    background-color: black;
+    /* box-shadow: 0.5px 0.5px 5px grey; */
+    height: 100vh;
+    aspect-ratio: calc(9/18);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 60px;
+}
+
+#calculatorbuttons{
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-auto-rows: auto;
+    justify-content: center;
+    grid-gap: 8px;
+    /* margin-bottom: 10px; */
+    grid-template-areas: 
+    "clear delete modulus divide"
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three add"
+    "zero zero decimal equals";
+}
+#zero{
+    width: 100%;
+    border: 0px;
+    height: 100%;        
+    border-radius: 50px;
+}
+.numbers, #decimalpoint{
+    background: #333333;
+    color: #fff;
+}
+.operator, #equals{
+    background-color: #fe9505;
+    color: white;
+    font-size: 30px;
+}
+button{
+    border: 0px;
+    font-size: 26px;
+    /* font-weight: 500; */
+}
+button:not(#zero){
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+ 
+}
+#clear, #delete, #modulus{
+    background: #a5a5a5;
+    color: black;
+}
+#demo{
+    color: white;
+    height: calc(0.36 * var(--container-height));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: end;
+    font-size: 48px;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    font-weight: 100;
+}
+#clear{
+    grid-area: clear;
+}
+#zero{
+    grid-area: zero;
+}
+#equals{
+    grid-area: equals;
+}
+#one{
+    grid-area: one;
+}
+#two{
+    grid-area: two;
+}
+#three{
+    grid-area: three;
+}
+#four{
+    grid-area: four;
+}
+#five{
+    grid-area: five;
+}
+#six{
+    grid-area: six;
+}
+#seven{
+    grid-area: seven;
+}
+#eight{
+    grid-area: eight;
+}
+#nine{
+    grid-area: nine;
+}
+#add{
+    grid-area: add;
+}
+#minus{
+    grid-area: minus;
+}
+#multiply{
+    grid-area: multiply;
+}
+#divide{
+    grid-area: divide;
+}
+#decimalpoint{
+    grid-area: decimal;
+}
+#delete{
+    grid-area: delete;
+}
+#modulus{
+    grid-area: modulus;
+}
+/* #display{
+
+} */
