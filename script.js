@@ -86,6 +86,8 @@ let dotValues = () => {
             result = solve.modulus(x1, x2);
             break;
     }
+    console.log(result)
+    console.log(Calculator.storage)
     if(!result || result === Infinity){
         demo.textContent = "ERROR";
         buttons.forEach(button => button.disabled = true)
@@ -161,3 +163,35 @@ window.addEventListener("load", () => {
 })
 // Event listener for the decimal point
 dotButton.addEventListener("click", dotValues)
+
+// Window event listener for the keys
+window.addEventListener("keydown", e => {
+    if(e.key === "Enter") operate();
+    if(e.key === "Backspace") deleteValues();
+    if(e.key === "Delete") clearValues();
+    if(e.key === ".") dotValues();
+    if(e.key === "*" || e.key === "+" || e.key === "-" || e.key === "/" || e.key === "%"){
+        if(!Calculator.currentOperator){
+            if(e.key === "*") Calculator.currentOperator = "×";
+            if(e.key === "-") Calculator.currentOperator = "—";
+            if(e.key === "/") Calculator.currentOperator = "÷";
+            if(e.key === "+") Calculator.currentOperator = "+";
+            if(e.key === "%") Calculator.currentOperator = "%";
+            Calculator.storage.push(Calculator.currentOperator);
+        }
+        else{
+            operate();
+            Calculator.currentOperator = e.key;
+            Calculator.storage.push(Calculator.currentOperator);
+        }
+    }
+    if(e.key >= 0 || e.key <= 9){
+        Calculator.storage.push(e.key)
+        if(!Calculator.currentOperator) demo.textContent = Calculator.storage.join("")
+        else {
+            demo.textContent = "";
+            Calculator.secondNumber.push(e.key);
+            demo.textContent = Calculator.secondNumber.join("")
+    }
+    }
+})

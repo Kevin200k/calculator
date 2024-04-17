@@ -80,7 +80,7 @@ button:not(#zero){
     font-size: 48px;
     margin-left: 15px;
     margin-right: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-weight: 100;
 }
 #clear{
