@@ -95,7 +95,7 @@ let dotValues = () => {
         Calculator.storage.push(demo.textContent);
         Calculator.currentOperator = "";
     }
-    else if(!result || result === Infinity){
+    else if(!result || result === Infinity || result === NaN){
         demo.textContent = "ERROR";
         buttons.forEach(button => button.disabled = true)
         setTimeout(() =>{
